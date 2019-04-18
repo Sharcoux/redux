@@ -1,0 +1,27 @@
+{
+  "name": "rnrfReduxSample",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "ios": "react-native run-ios",
+    "android": "react-native run-android",
+    "dev:ios": "yarn dev && yarn ios",
+    "dev:android": "yarn dev && yarn android",
+    "dev": "cp ../../src/* node_modules/react-native-router-flux/src/"
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "react": "16.8.6",
+    "react-native": "0.59.4",
+    "react-native-router-flux": "^4.0.6",
+    "react-navigation": "3.8.1",
+    "react-navigation-redux-helpers": "^3.0.2",
+    "react-redux": "^7.0.2",
+    "redux": "4.0.x"
+  },
+  "devDependencies": {
+    "@babel/core": "7.4.3",
+    "metro-react-native-babel-preset": "^0.53.1"
+  }
+}
