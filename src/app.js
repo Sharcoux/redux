@@ -2,7 +2,7 @@ import React from 'react';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { Provider, connect } from 'react-redux';
 import { Scene, Actions, Router } from 'react-native-router-flux';
-import { reduxifyNavigator, createReactNavigationReduxMiddleware, createNavigationReducer } from 'react-navigation-redux-helpers';
+import { createReduxContainer, createReactNavigationReduxMiddleware, createNavigationReducer } from 'react-navigation-redux-helpers';
 
 import Home from './home';
 import Page from './page';
@@ -28,8 +28,8 @@ const appReducer = combineReducers({
   reducer,
 });
 
-const middleware = createReactNavigationReduxMiddleware('root', state => state.nav);
-const ReduxNavigator = reduxifyNavigator(AppNavigator, 'root');
+const middleware = createReactNavigationReduxMiddleware(state => state.nav);
+const ReduxNavigator = createReduxContainer(AppNavigator, 'root');
 const mapStateToProps = state => ({
   state: state.nav,
 });
